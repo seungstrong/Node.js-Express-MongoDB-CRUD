@@ -1,0 +1,31 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/person" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{person._id}}">
+    <div class="form-group">
+        <label>성명</label>
+        <input type="text" class="form-control" name="fullName" placeholder="성명" value="{{person.fullName}}">
+        <div class="text-danger">
+            {{person.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>이메일</label>
+        <input type="text" class="form-control" name="email" placeholder="이메일" value="{{person.email}}">
+        <div class="text-danger">
+            {{person.emailError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>휴대전화</label>
+            <input type="text" class="form-control" name="mobile" placeholder="휴대전화" value="{{person.mobile}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>지역</label>
+            <input type="text" class="form-control" name="city" placeholder="지역" value="{{person.city}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> 입력</button>
+        <a class="btn btn-secondary" href="/person/list"><i class="fa fa-list-alt"></i> 목록</a>
+    </div>
+</form>

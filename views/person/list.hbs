@@ -1,0 +1,26 @@
+<h3><a class="btn btn-secondary" href="/person"><i class="fa fa-plus"></i> 생성하기</a> 인적정보 목록</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>성명</th>
+            <th>이메일</th>
+            <th>휴대전화</th>
+            <th>지역</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/person/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/person/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

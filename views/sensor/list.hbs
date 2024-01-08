@@ -1,0 +1,24 @@
+<h3><a class="btn btn-secondary" href="/sensor"><i class="fa fa-plus"></i> 생성하기</a> 센서정보 목록</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>온도</th>
+            <th>습도</th>
+            <th>적외선 감지</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.temper}} °C</td>
+            <td>{{this.humid}} %</td>
+            <td>{{this.pir}}</td>
+            <td>
+                <a href="/sensor/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/sensor/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
